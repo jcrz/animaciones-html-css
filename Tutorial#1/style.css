@@ -1,0 +1,69 @@
+body{
+    background-color: lightblue;
+}
+
+.wrapper{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+img{
+    width: 20%;
+}
+
+.circulo{
+    width: 100px;
+    text-align: center;
+    padding: 50px 0;
+    line-height: 0;
+    margin: 60px auto;
+    background: pink;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 1s, transform 0.4s 1s ease-in;
+}
+
+.circulo:hover{
+    background: salmon;
+    transform: rotate(360deg);
+
+}
+
+/*// ELEMENTOS A ANIMAR //*/
+
+.nube{
+    position: relative;
+    top: -40px;
+    left: 0;
+    animation-name: viento;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+}
+
+.nube:nth-child(2){
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    opacity: 0.5;
+    animation: viento 3s forwards infinite linear,
+                bajar 5s 1s infinite ease;
+}
+
+/*//   KEYFRAME   //*/
+
+@keyframes viento{
+    from{ transform: translateX(-130px)}
+    to{ transform: translateX(800px)}
+}
+
+@keyframes bajar{
+    0%{ top: 50px }
+    50%{ top: -80px }
+    100%{ top: 50px }
+}
